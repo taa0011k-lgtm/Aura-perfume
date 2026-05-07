@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
+
+  --color-gold-50: #fbf9f3;
+  --color-gold-100: #f5f0e1;
+  --color-gold-200: #ede2c5;
+  --color-gold-300: #decb9b;
+  --color-gold-400: #cdaf6b;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b9932d;
+  --color-gold-700: #9e7d26;
+  --color-gold-800: #81661f;
+  --color-gold-900: #665119;
+  --color-gold-950: #3d300f;
+
+  --color-charcoal: #0a0a0a;
+  --color-matte-black: #000000;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #000;
+  }
+  
+  body {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    @apply antialiased;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .luxury-text-gradient {
+    @apply bg-gradient-to-tr from-gold-300 via-gold-100 to-gold-400 bg-clip-text text-transparent;
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(circle, black, transparent 80%);
+  }
+
+  .grainy-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+  }
+}
